@@ -13,10 +13,8 @@ export const CheckboxGenre = ({selectedGenres = [String], setSelectedGenres = ()
     const handleGenreChange = (genre, isChecked) => {
         if (isChecked) {
             setSelectedGenres([...selectedGenres ,genre ])
-            console.log(selectedGenres)
         } else {
             setSelectedGenres([...selectedGenres.filter(g => g !== genre)])
-            console.log(selectedGenres)
         }
     }
 
