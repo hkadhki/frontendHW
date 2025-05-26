@@ -23,7 +23,7 @@ export default function HomePage({clickeFavorite}) {
     }, []);
 
     return (
-        <Box ml="20px" mr="20px">
+        <Box ml="200px" mr="200px">
             <Flex justify="flex-end" align="center">
                 <CheckboxGenre
                     selectedGenres={selectedGenres}

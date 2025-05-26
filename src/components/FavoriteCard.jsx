@@ -20,16 +20,17 @@ export const FavoriteCard = ({
             borderRadius="md"
             bg="white"
             boxShadow="sm"
-            maxW="md"
+            w={"600px"}
 
         >
             <Image
                 src={`data:image/png;base64,${image}`}
                 borderRadius="full"
-                boxSize="150px"
+                boxSize="100px"
                 objectFit="cover"
+                mr="40px"
             />
-           <Flex align="center" gap={4}>
+           <Flex align="center" gap={4} flexDirection="row" justifyContent="space-between" w={"500px"}>
                 <Box>
                     <Text fontWeight="bold">{title}</Text>
                     <Flex align="center" gap={1}>

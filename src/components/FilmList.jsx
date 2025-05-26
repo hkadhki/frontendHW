@@ -9,7 +9,7 @@ export const FilmList = ({ selectedGenres = [] , films = [], clickeFavorite}) =>
         : films.filter(movie => selectedGenres.includes(movie.type))
 
     return (
-        <Grid templateColumns="repeat(3, 1fr)" gap="60px 50px" p="25px 0 140px 0">
+        <Grid templateColumns="repeat(3, 348.4px)" justifyContent="center" gap="60px 50px" p="25px 0 140px 0">
             {filteredMovies.map(movie => (
                 <FilmCard
                     key={movie.id}

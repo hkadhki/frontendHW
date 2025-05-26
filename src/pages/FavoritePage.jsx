@@ -21,7 +21,7 @@ export default function FavoritePage({clickeFavorite}) {
     }, [data]);
 
     return (
-        <Box ml="20px" mr="20px">
+        <Box ml="20px" mr="20px" ml="200px">
             <Heading as='h1' size={'4xl'} fontWeight='bold' ml={'50px'}>
                 Избранное
             </Heading>

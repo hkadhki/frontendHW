@@ -20,7 +20,7 @@ export default function AddMovie() {
         duration: "",
         description: "",
         isFavorite: false,
-        imageUrl: "",
+        image: "",
     });
 
     const [selected, setSelected] = useState(null);
@@ -32,7 +32,8 @@ export default function AddMovie() {
         data.append("description", formData.description);
         data.append("type", formData.type);
         data.append("isFavorite", formData.isFavorite);
-        data.append("image", formData.imageUrl);
+        data.append("image", formData.image);
+        console.log(data.get("image"));
 
         try {
             const response = await axios.post("http://localhost:8080/films", data, {
@@ -49,8 +50,8 @@ export default function AddMovie() {
 
     return (
         <Box p="0 0 100px 0">
-            <Heading as='h1' size={'4xl'} fontWeight='bold' ml={'50px'}>
-                Редактировать фильм
+            <Heading as='h1' size={'4xl'} fontWeight='bold' ml={'200px'} mb={"20px"}>
+                Добавить фильм
             </Heading>
             <Center>
                 <Box w="770px" border={"1px solid #EEEEEE"} p={"50px"} borderRadius={"16px"}>
@@ -136,7 +137,7 @@ export default function AddMovie() {
                                                                 onChange={(e) => {
                                                                     const file = e.target.files[0];
                                                                     if (file) {
-                                                                        setFormData(prev => ({ ...prev, imageUrl: file }));
+                                                                        setFormData(prev => ({ ...prev, image: file }));
                                                                     }
                                                                 }} />
                                         <Flex gap="30px" align={"center"}>

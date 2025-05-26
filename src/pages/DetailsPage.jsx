@@ -39,13 +39,12 @@ export const DetailsPage = ({clickeFavorite}) => {
                 console.log(err.message);
             }
         };
+        setIsFavoriteState(data.isFavorite);
         fetchData();
     }, []);
     const [isFavoriteState, setIsFavoriteState] = useState(data.isFavorite);
 
-
-
-    const handleClickStar = (isFav) => {
+        const handleClickStar = (isFav) => {
         if (isFav) {
             return <Icon color='#F9A62B' fontSize='20px'><FaStar/></Icon>
         } else {
@@ -88,10 +87,10 @@ export const DetailsPage = ({clickeFavorite}) => {
                         {data.description}
                     </Text>
                     <HStack spacing={4} justify="flex-end" w="full">
-                        <Button size="xs" p={'1px 10px'} fontSize="13px" color={'#4A61DD'} as={Link} to={`/edit/${id}`}>
+                        <Button size="xs" p={'1px 10px'} fontSize="13px" color={'#4A61DD'} as={Link} to={`/edit/${id}`}  bg={'#FFFFFF'} border={'1px solid '}>
                             Редактировать
                         </Button>
-                        <Button size="xs" fontSize="13px" color={'#4A61DD'} onClick={() =>
+                        <Button size="xs" fontSize="13px" color={'#4A61DD'} bg={'#FFFFFF'} border={'1px solid '} onClick={() =>
                             axios.delete("http://localhost:8080/films/" + id)
                         }>
                             Удалить
